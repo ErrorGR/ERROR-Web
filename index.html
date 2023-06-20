@@ -2,96 +2,320 @@
 <html>
 
 <head>
-    <title>ERROR's Web</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.staticfile.org/foundation/5.5.3/css/foundation.min.css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
-    <script src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error's Web</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 侧边导航栏的样式 */
+        #sidebar {
+            position: fixed;
+            /* 固定在屏幕上方不动 */
+            top: 0;
+            left: -250px;
+            /* 初始状态隐藏在屏幕左侧 */
+            width: 200px;
+            height: 100%;
+            background-color: #A2A2A299;
+            < !--导航栏颜色（#xxxxxx为颜色代码后面xx为透明度xx%-->
+        }
+
+        #sidebar ul {
+            list-style: none;
+        }
+
+        #sidebar a {
+            font-size: 20px;
+            /* 修改字体大小 */
+            line-height: 60px;
+            /* 修改行高，即调整两行文字之间的间距 */
+        }
+
+        /* 主内容区的样式 */
+        #main {
+            margin-left: 0px;
+            /* 在侧边导航栏显示时，主内容区向右偏移 */
+            padding: px;
+        }
+
+        /* 导航栏按钮的样式 */
+        #navBtn {
+            position: fixed;
+            /* 固定在屏幕上方不动 */
+            < !-- background-color: #A7A7A7;
+            -->top: 10px;
+            left: 8px;
+            font-size: 33px;
+            height: 40px;
+            width: 38px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+    </style>
+
+
+
+    <title>Button styles</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 
-<!--ERROR的小窝背景颜色-->
+
+
+
+
+
+
+<!-- 为导航栏添加过渡效果 -->
 <style>
-    .custom-tab-bar-section {
-        background-color: #FFFFFF;
+    #sidebar {
+        transition: left 0.8s;
     }
 </style>
-<!--ERROR的小窝文字颜色-->
+
+
+
+
+
+
+
+
+
+<!--背景图片-->
 <style>
-    .tab-bar-section .title {
-        color: #000000;
+    body {
+        background-image: url('Home.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        position: relative;
+        /* 设置相对定位 */
+        height: 168vh;
+        /* 设置容器高度 */
+        z-index: 1;
+        /* 元素所在层 */
+    }
+
+    body:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.25);
+        /* 设置50%透明度的白色背景颜色 */
+        z-index: -1;
+        /* 将伪元素置于底部 */
     }
 </style>
+
+
+<style>
+    /* 去掉超链接下划线 */
+    a {
+        text-decoration: none;
+    }
+</style>
+
+
+
+<style>
+    button {
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    /* 导航栏目录 */
+    .button-0 {
+        width: 200px;
+        height: 50px;
+        background-color: #72727227;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 25px;
+        opacity: 0.5;
+    }
+
+    .button-0:hover {
+        background-color: #4CAF50;
+        color: #FFFFFF;
+    }
+
+    /* 样式1 */
+    .button-1 {
+        width: 200px;
+        height: 50px;
+        background-color: #727272;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+    }
+
+    .button-1:hover {
+        background-color: #A9A9A920;
+    }
+
+    /* 样式2 */
+    .button-2 {
+        width: 200px;
+        height: 50px;
+        background-color: #727272;
+        position: absolute;
+        top: 100px;
+        left: 0px;
+    }
+
+    .button-2:hover {
+        background-color: #1976d2;
+    }
+
+    /* 样式3 */
+    .button-3 {
+        width: 200px;
+        height: 50px;
+        background-color: #727272;
+        position: absolute;
+        top: 150px;
+        left: 0px;
+    }
+
+    .button-3:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    /* 样式4 */
+    .button-4 {
+        width: 200px;
+        height: 50px;
+        background-color: #727272;
+        position: absolute;
+        top: 200px;
+        left: 0px;
+    }
+
+    .button-4:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+
+
+
+
+
+
 
 <body>
-    <div class="off-canvas-wrap" data-offcanvas>
-        <div class="inner-wrap">
-            <nav class="tab-bar">
-                <section class="left-small">
-                    <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-                </section>
+    <!-- 导航栏按钮 -->
+    <div style="color:#FFFFFF;" id="navBtn">&#9776;</div>
 
-                <!--这是原本默认颜色的代码<section class="middle tab-bar-section">-->
-                <section class="middle tab-bar-section custom-tab-bar-section">
-                    <!--网页标题-->
-                    <h1 class="title">ERROR的小窝</h1>
-                </section>
-            </nav>
 
-            <aside class="left-off-canvas-menu">
-                <ul class="off-canvas-list test">
-                    <!--左侧导航栏名字-->
-                    <li><label>目录</label></li>
-                    <!--左侧导航栏    <li><a href="#">Link Name</a></li>    -->
-                    <!--例如         <li><a href="https://baidu.com">百度</a></li>    -->
-                    <li><a href="https://errorgr.github.io/ERROR-Web/">首页</a></li>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                    <li><a href="#">Link 5</a></li>
-                    <li><a href="#">Link 6</a></li>
-                    <li><a href="https://errorgr.github.io/ERROR-Web/Link 7">Link 7</a></li>
-                </ul>
-            </aside>
+    <!-- 左侧导航栏 -->
+    <div id="sidebar">
+        <ul>
+            <!--左侧导航栏-->
+            <button class="button-0" style="color: rgb(0,0,0);">目录</button>
+            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/LostPage404/index.html'" class="button-1">主页</button>
+            <button class="button-2">Button 2</button>
+            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/Starry Sky/index.html'" class="button-3">星空</button>
+            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/Link 7'" class="button-4">Button 4</button>
 
-            <section class="main-section">
 
-                <h1>ERROR </h1>
-
-                <div>
-                    Welcome to ERROR's Web! ʕ ᵔᴥᵔ ʔ
-                </div>
-                <br>
-                <div>
-                    别急，虽然现在还啥都没有_(:з」∠)_
-                </div>
-                </p>放一些有用的网站：</p>
-                <!--链接文字版   <li><a href="#">Link.Name</a></li>    -->
-                <a href="https://www.baidu.com">有不会的东西可以去这里٩( 'ω' )و </a>
-                <br>
-                <a href="https://www.bilibili.com">伟大的B站(˵¯͒〰¯͒˵)</a>
-                <br>
-                <a href="https://www.pixiv.net">别点！我知道你进不去（手动滑稽）</a>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                </p>网页版本：Test-v1.1（找找v1.0在哪里？）</p>
-
-            </section>
-
-            <a class="exit-off-canvas"></a>
-
-        </div>
+        </ul>
     </div>
 
-    <!-- 初始化 Foundation JS -->
-    <script>
-        $(document).ready(function() {
-            $(document).foundation();
-        })
-    </script>
 
+
+
+
+    <!-- 主内容区 -->
+    <div id="main">
+        <br>
+        <h1 style="color:#FFFFFF;">ERROR </h1>
+
+        <div style="color:#FFFFFF;">
+            Welcome to
+        </div>
+        <div style="color:#FFFFFF;">
+            ERROR's Web！
+        </div>
+        <div style="color:#FFFFFF;">
+            ʕ ᵔᴥᵔ ʔ
+        </div>
+        <div style="color:#FFFFFF;">
+            别急
+        </div>
+        <div style="color:#FFFFFF;">
+            虽然现在还啥都没有
+        </div>
+        <div style="color:#FFFFFF;">
+            _(:з」∠)_
+        </div>
+        <!-- </p>放一些有用的网站吧：</p>-->
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <div style="color:#FFFFFF;">
+        放一些有用的网站吧：
+    </div>
+    <!--超链接   <li><a href="#">Link.Name</a></li>    -->
+    <a style="color:#FFFFFF;" href="https://www.baidu.com">有不会的东西可以去这里٩( 'ω' )و </a>
+    <br>
+    <a style="color:#FFFFFF;" href="https://www.bilibili.com">伟大的B站(˵¯͒〰¯͒˵)</a>
+    <br>
+
+    <a style="color:#FFFFFF;" href="https://www.pixiv.net">别点！我知道你进不去（手动滑稽）</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <pre style="color:#FFFFFF;">
+                                网页版本：Test-v2.1
+                  （找找v1.0在哪里？∠( ᐛ 」∠)_看戏）
+                </pre>
+    </div>
+    <!--导航栏监听等-->
+    <script>
+        // 获取导航栏按钮、侧边导航栏和主内容区元素
+        const navBtn = document.getElementById('navBtn');
+        const sidebar = document.getElementById('sidebar');
+        const main = document.getElementById('main');
+
+        // 导航栏按钮点击事件处理函数
+        function toggleSidebar() {
+            if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
+                // 如果侧边导航栏隐藏在屏幕左侧，或者未设置 left 属性（即第一次单击导航栏按钮），则显示侧边导航栏
+                sidebar.style.left = '0';
+            } else {
+                // 否则，隐藏侧边导航栏
+                sidebar.style.left = '-250px';
+            }
+        }
+
+        // 主内容区点击事件处理函数，用于关闭侧边导航栏
+        function closeSidebar(event) {
+            if (event.target === main) {
+                // 如果用户单击了主内容区，则隐藏侧边导航栏
+                sidebar.style.left = '-250px';
+            }
+        }
+
+        // 给导航栏按钮添加点击事件监听器
+        navBtn.addEventListener('click', toggleSidebar);
+
+        // 给整个页面添加点击事件监听器，用于关闭侧边导航栏
+        document.addEventListener('click', function(event) {
+            if (!sidebar.contains(event.target) && event.target !== navBtn) {
+                // 如果用户单击了页面上除侧边导航栏和导航栏按钮以外的部分，则隐藏侧边导航栏
+                sidebar.style.left = '-250px';
+            }
+        });
+    </script>
 </body>
 
 </html>
