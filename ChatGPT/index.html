@@ -1,94 +1,64 @@
 
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
+<html>
 <head>
+    <title>模拟聊天机器人</title>
+    <style>
+        .chat-message {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
 
-<script src="/cdn-cgi/apps/head/aGHnri6UKOzxToa_ESggcTcDHHw.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-0MN0L0RJXZ"></script>
-<script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-0MN0L0RJXZ');
-    </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6590568817192179" crossorigin="anonymous"></script>
-<meta charset="UTF-8">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-title" content="BAI Chat">
-<link rel="apple-touch-icon" href="/assets/bai.png">
-<link rel="icon" type="image/png" href="/assets/bai.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
-<title>BAI Chat</title>
-<meta name="description" content="BAI Chat is a GPT-3.5 / ChatGPT API based chatbot that is free, convenient and responsive. Give it a try!">
-<script type="module" crossorigin src="/assets/index-c0687afe.js"></script>
-<link rel="stylesheet" href="/assets/index-c8a1d67a.css">
+        .user-message {
+            background-color: #EDEDED;
+        }
+
+        .robot-message {
+            background-color: #78C2AD;
+            color: white;
+        }
+    </style>
 </head>
-<body class="dark:bg-black">
-<div id="app">
-<style>
-			.loading-wrap {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				height: 100vh;
-			}
+<body>
+    <h1>聊天机器人</h1>
+    <iframe src="https://chatbot.theb.ai/#/chat/1002" width="600" height="800" name="chatbot"></iframe>
 
-			.balls {
-				width: 4em;
-				display: flex;
-				flex-flow: row nowrap;
-				align-items: center;
-				justify-content: space-between;
-			}
+    <h1>模拟用户输入</h1>
+    <input type="text" id="userInput" placeholder="请输入要发送的消息">
+    <button id="sendButton">发送</button>
+    <div id="chatHistory"></div>
 
-			.balls div {
-				width: 0.8em;
-				height: 0.8em;
-				border-radius: 50%;
-				background-color: #4b9e5f;
-			}
+    <script>
+        // 获取聊天机器人页面的文本框元素以及发送按钮元素
+        var chatInput = window.parent.document.getElementById("userInput");
+        var sendButton = window.parent.document.getElementById("sendButton");
 
-			.balls div:nth-of-type(1) {
-				transform: translateX(-100%);
-				animation: left-swing 0.5s ease-in alternate infinite;
-			}
+        // 监听发送按钮的点击事件
+        sendButton.addEventListener("click", function() {
+            // 获取用户在你的网页上输入的消息
+            var userInput = chatInput.value;
 
-			.balls div:nth-of-type(3) {
-				transform: translateX(-95%);
-				animation: right-swing 0.5s ease-out alternate infinite;
-			}
+            // 将消息设置为聊天机器人界面的输入框中的值
+            var robotInput = window.frames["chatbot"].document.getElementById("userInput");
+            robotInput.value = userInput;
 
-			@keyframes left-swing {
+            // 模拟用户按下回车键，并发送消息
+            var event = new Event("keydown");
+            event.keyCode = 13; // 使用 Enter 键的键码（keyCode）模拟回车键
+            robotInput.dispatchEvent(event);
 
-				50%,
-				100% {
-					transform: translateX(95%);
-				}
-			}
+            // 等待一段时间，以便聊天机器人有时间返回消息
+            setTimeout(function() {
+                // 获取聊天机器人返回的消息
+                var chatHistory = window.frames["chatbot"].document.getElementById("chatHistory");
+                var robotOutput = chatHistory.lastElementChild.innerHTML;
 
-			@keyframes right-swing {
-				50% {
-					transform: translateX(-95%);
-				}
-
-				100% {
-					transform: translateX(100%);
-				}
-			}
-
-			@media (prefers-color-scheme: dark) {
-				body {
-					background: #121212;
-				}
-			}
-		</style>
-<div class="loading-wrap">
-<div class="balls">
-<div></div>
-<div></div>
-<div></div>
-</div>
-</div>
-</div>
+                // 在你的网页上显示聊天机器人返回的消息
+                var historyDiv = window.parent.document.getElementById("chatHistory");
+                historyDiv.innerHTML += '<div class="chat-message robot-message">' + robotOutput + '</div>';
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
