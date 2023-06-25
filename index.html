@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error's Web</title>
@@ -8,8 +7,8 @@
         body {
             margin: 0;
             padding: 0;
+            overflow: hidden;
         }
-
         /* 侧边导航栏的样式 */
         #sidebar {
             position: fixed;
@@ -22,7 +21,6 @@
             background-color: #A2A2A299;
             < !--导航栏颜色（#xxxxxx为颜色代码后面xx为透明度xx%-->
         }
-
         #sidebar ul {
             list-style: none;
         }
@@ -34,18 +32,11 @@
             /* 修改行高，即调整两行文字之间的间距 */
         }
 
-        /* 主内容区的样式 */
-        #main {
-            margin-left: 0px;
-            /* 在侧边导航栏显示时，主内容区向右偏移 */
-            padding: px;
-        }
-
         /* 导航栏按钮的样式 */
         #navBtn {
             position: fixed;
             /* 固定在屏幕上方不动 */
-            top: 10px;
+            top: 2px;
             left: 8px;
             font-size: 33px;
             height: 40px;
@@ -53,165 +44,199 @@
             cursor: pointer;
             z-index: 9999;
         }
+        /*右侧代码*/
+        #clickout {
+            position: fixed;
+            /* 固定在屏幕上方不动 */
+            top: 0;
+            right: -250px;
+            /* 初始状态隐藏在屏幕右侧 */
+            width: 200px;
+            height: 100%;
+            background-color: transparent;
+            < !--导航栏颜色（#xxxxxx为颜色代码后面xx为透明度xx%-->
+        }
     </style>
+    <!-- 为导航栏添加过渡效果 -->
+    <style>
+        #sidebar {
+            transition: left 0.9s;
+        }
+    </style>
+    <style>
+        /* 去掉超链接下划线 */
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <!-- 按钮相关设置 -->
+    <style>
+        button {
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        /* 导航栏目录 */
+        .button-0 {
+            width: 200px;
+            height: 50px;
+            background-color: #72727227;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 30px;
+            font-family: Myfont;
+            opacity: 0.5;
+        }
+
+        .button-0:hover {
+            background-color: #0000000;
+            color: #FFFFFF;
+        }
+
+        /* 首页 */
+        .button-firstpage {
+            width: 200px;
+            height: 50px;
+            background-color: #D2F99180;
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-firstpage:hover {
+            background-color: #E8F8BD90;
+        }
+
+        /* 主页 */
+        .button-homepage {
+            width: 200px;
+            height: 50px;
+            background-color: #A1FBFB80;
+            position: absolute;
+            top: 100px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-homepage:hover {
+            background-color: #E8F8BD90;
+        }
+
+        /* ChatGPT */
+        .button-chat {
+            width: 200px;
+            height: 50px;
+            background-color: #18A05885;
+            position: absolute;
+            top: 150px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-chat:hover {
+            background-color: #E8F8BD90;
+            color: white;
+        }
+
+        /* 工具箱 */
+        .button-toolbox {
+            width: 200px;
+            height: 50px;
+            background-color: #48A0FF80;
+            position: absolute;
+            top: 200px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-toolbox:hover {
+            background-color: #F8A8D090;
+            color: white;
+        }
+/* tools */
+        .button-tools {
+            width: 200px;
+            height: 50px;
+            background-color: #B4E8CE90;
+            position: absolute;
+            top: 250px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-tools:hover {
+            background-color: #B4E8CE90;
+            color: white;
+        }
 
 
+        /* 星幻 */
+        .button-starrysky {
+            width: 200px;
+            height: 50px;
+            background-color: #D1A9F980;
+            position: absolute;
+            top: 300px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
 
-    <title>Button styles</title>
+        .button-starrysky:hover {
+            background-color: #E8F8BD90;
+            color: white;
+        }
+
+        /* 历史网页 */
+        .button-historyweb {
+            width: 200px;
+            height: 50px;
+            background-color: #F8A8D090;
+            position: absolute;
+            top: 350px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-historyweb:hover {
+            background-color: #F8A8D090;
+            color: white;
+        }
+
+        /* 底部建议 */
+        .button-advice {
+            width: 90px;
+            height: 50px;
+            background-color: #FFFFFF00;
+            position: absolute;
+            top: 730px;
+            left: 50px;
+            font-size: 15px;
+            font-family: Myfont;
+        }
+
+        .button-advice:hover {
+            background-color: #F8A8D090;
+            color: white;
+        }
+    </style>
+<!--字体相关-->
     <link rel="stylesheet" type="text/css" href="style.css">
 
-
-
+    <link rel="stylesheet" href="font.css">
 </head>
 
 
-
-
-
-
-
-
-<!-- 为导航栏添加过渡效果 -->
-<style>
-    #sidebar {
-        transition: left 0.8s;
-    }
-</style>
-
-<style>
-    /* 去掉超链接下划线 */
-    a {
-        text-decoration: none;
-    }
-</style>
-
-
-<!-- 按钮相关设置 -->
-<style>
-    button {
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-        padding: 8px;
-    }
-
-    /* 导航栏目录 */
-    .button-0 {
-        width: 200px;
-        height: 50px;
-        background-color: #72727227;
-        position: absolute;
-        top: 3px;
-        left: -32px;
-        font-size: 25px;
-        opacity: 0.5;
-    }
-
-    .button-0:hover {
-        background-color: #0000000;
-        color: #FFFFFF;
-    }
-
-    /* 样式1 */
-    .button-1 {
-        width: 200px;
-        height: 50px;
-        background-color: #D2F99180;
-        position: absolute;
-        top: 50px;
-        left: 0px;
-    }
-
-    .button-1:hover {
-        background-color: #E8F8BD90;
-    }
-
-    /* 样式2 */
-    .button-2 {
-        width: 200px;
-        height: 50px;
-        background-color: #A1FBFB80;
-        position: absolute;
-        top: 100px;
-        left: 0px;
-    }
-
-    .button-2:hover {
-        background-color: #E8F8BD90;
-    }
-
-    /* 样式3 */
-    .button-3 {
-        width: 200px;
-        height: 50px;
-        background-color: #18A05885;
-        position: absolute;
-        top: 150px;
-        left: 0px;
-    }
-
-    .button-3:hover {
-        background-color: #E8F8BD90;
-        color: white;
-    }
-
-    /* 样式4 */
-    .button-4 {
-        width: 200px;
-        height: 50px;
-        background-color: #48A0FF80;
-        position: absolute;
-        top: 200px;
-        left: 0px;
-    }
-
-    .button-4:hover {
-        background-color: #F8A8D090;
-        color: white;
-    }
-    /* 样式5 */
-    .button-5 {
-        width: 200px;
-        height: 50px;
-        background-color: #D1A9F980;
-        position: absolute;
-        top: 250px;
-        left: 0px;
-    }
-
-    .button-5:hover {
-        background-color: #E8F8BD90;
-        color: white;
-    }
-    /* 样式6 */
-    .button-6 {
-        width: 200px;
-        height: 50px;
-        background-color: #F8A8D090;
-        position: absolute;
-        top: 300px;
-        left: 0px;
-    }
-
-    .button-6:hover {
-        background-color: #F8A8D090;
-        color: white;
-    }
-    /* 底部建议 */
-    .button-advice {
-        width: 90px;
-        height: 50px;
-        background-color: #FFFFFF00;
-        position: absolute;
-        top: 730px;
-        left: 50px;
-    }
-
-    .button-advice:hover {
-        background-color: #F8A8D090;
-        color: white;
-    }
-</style>
 
 
 
@@ -222,111 +247,29 @@
 <body>
     <!-- 导航栏按钮 -->
     <div style="color:#FFFFFF;" id="navBtn">&#9776;</div>
-
-
+    <!--这是右侧区域-->
+    <div id="clickout"></div>
     <!-- 左侧导航栏 -->
     <div id="sidebar">
         <ul>
             <!--左侧导航栏-->
             <button class="button-0" style="color: rgb(0,0,0);left">目录</button>
-            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/'" class="button-1">首页</button>
-            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/HomePage'"class="button-2">主页</button>
-            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/ChatGPT'" class="button-3">ChatGPT</button>
-            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/ToolBox'" class="button-4">工具箱</button>
-            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/Starry Sky'" class="button-5">星环</button>
-            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/History-Web'" class="button-6">历史网站</button>
-            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/Advices'" class="button-advice">建议/反馈</button>
+            <button onclick="loadFirstPage()" class="button-firstpage">首页</button>
+            <button onclick="loadHomePage()" class="button-homepage">主页</button>
+            <button onclick="loadChatGPT()" class="button-chat">ChatGPT</button>
+            <button onclick="loadToolBox()" class="button-toolbox">工具箱</button>
+            <button onclick="loadTools()" class="button-tools">小程序</button>
+            <button onclick="loadStarrySky()" class="button-starrysky">星环</button>
+            <button onclick="loadHistoryWeb()" class="button-historyweb">历史网站</button>
+            <button onclick="loadAdvices()" class="button-advice">建议/反馈</button>
         </ul>
     </div>
 
-
-
-
-
-    <!-- 主内容区 -->
-    <div id="main">
-
-        <!--背景图片-->
-        <style>
-            body {
-                background-image: url('Home.jpg');
-                background-size: 100% 100%;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                position: relative;
-                /* 设置容器高度 */
-                z-index: 1;
-                /* 元素所在层 */
-            }
-
-            body:before {
-                content: "";
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 101%;
-                background-color: rgba(255, 255, 255, 0.25);
-                /* 设置50%透明度的白色背景颜色 */
-                z-index: -1;
-                /* 将伪元素置于底部 */
-            }
-        </style>
-
-
-
-
-
-        <br>
-        <div style="text-align:center;font-size:35px; position: absolute; top: 10px; left:90px; inline-block;">
-            <i>
-                <div style="color:#000000;">ERROR的小窝</div>
-
-            </i>
-        </div>
-        
-        
-        
-<!-- 右上角时间 -->
-<div id="clock" style="font-size: 23px; position: absolute; top: 75px; right: 0; display: inline-block;">
-    <span class="date"></span><br>
-    <span class="time"></span><br>
-    <span class="day"></span>
-</div>
-<script src="time.js"></script>
-<!-- 右上角时间 -->
-
-
-
-        <br><br>
-        <div style="color:#FFFFFF;font-size:25px;">
-            Welcome to
-        </div>
-        <div style="color:#FFFFFF;font-size:25px;">
-            ERROR's Web！
-        </div>
-        <div style="color:#FFFFFF;font-size:25px;"">
-            ʕ ᵔᴥᵔ ʔ
-        </div>
-        
-    <!--随机诗句相关代码↓-->
-        <div style=" color:#FFFFFF;font-size:24px;">
-            <i><span style="color:#00000097;font-size:22px;" id="random-poem"></span></i>
-        </div>
-
-        <script src="poem-library.js"></script>
-        <script>
-            const randomPoem = getRandomPoem();
-            document.getElementById('random-poem').innerText = randomPoem;
-        </script>
-        <!--随机诗句相关代码↑-->
-        <br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <pre style="color:#FFFFFF;">
-                                网页版本：正式版v1.0
-            （找找Test-v1.0在哪里？∠( ᐛ 」∠)_看戏）</pre>
-    </div>
+<!--消除iframe自带边框-->
+<style>
+    iframe {
+  border: none;
+}
 
 
 
@@ -335,48 +278,102 @@
 
 
 
-
-
-
-
-
-    <!--导航栏监听等-->
-    <script>
-        // 获取导航栏按钮、侧边导航栏和主内容区元素
-        const navBtn = document.getElementById('navBtn');
-        const sidebar = document.getElementById('sidebar');
-        const main = document.getElementById('main');
-
-        // 导航栏按钮点击事件处理函数
-        function toggleSidebar() {
-            if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
-                // 如果侧边导航栏隐藏在屏幕左侧，或者未设置 left 属性（即第一次单击导航栏按钮），则显示侧边导航栏
-                sidebar.style.left = '0';
-            } else {
-                // 否则，隐藏侧边导航栏
-                sidebar.style.left = '-250px';
-            }
+</style>
+<iframe style="width: 100%; height: 800px;"src="FirstPage/index.html" id="myFrame"></iframe>
+<script>
+        function loadFirstPage() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "FirstPage/index.html";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
         }
 
-        // 主内容区点击事件处理函数，用于关闭侧边导航栏
-        function closeSidebar(event) {
-            if (event.target === main) {
-                // 如果用户单击了主内容区，则隐藏侧边导航栏
-                sidebar.style.left = '-250px';
-            }
+        function loadHomePage() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "HomePage/index.html";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
         }
 
-        // 给导航栏按钮添加点击事件监听器
-        navBtn.addEventListener('click', toggleSidebar);
+        function loadChatGPT() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "https://chat.theb.ai/";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            myFrame.style.top = "-10px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
+        }
 
-        // 给整个页面添加点击事件监听器，用于关闭侧边导航栏
-        document.addEventListener('click', function(event) {
-            if (!sidebar.contains(event.target) && event.target !== navBtn) {
-                // 如果用户单击了页面上除侧边导航栏和导航栏按钮以外的部分，则隐藏侧边导航栏
-                sidebar.style.left = '-250px';
-            }
-        });
+        function loadTools() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "https://baidu.com/";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            myFrame.style.top = "-10px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
+        }
+
+        function loadToolBox() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "ToolBox/index.html";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            myFrame.style.top = "-10px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
+        }
+
+        function loadStarrySky() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "Starry Sky";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            myFrame.style.top = "-10px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
+        }
+
+        function loadHistoryWeb() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "https://errorgr.gio/ERROR-Web/HomePage";
+        }
+
+        function loadAdvices() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "Advices/index.html";
+        }
     </script>
-</body>
 
+<!--导航栏监听等-->
+<script>
+// 获取导航栏按钮、侧边导航栏元素和右侧区域元素
+const navBtn = document.getElementById('navBtn');
+const sidebar = document.getElementById('sidebar');
+const clickout = document.getElementById('clickout');
+
+// 导航栏按钮点击事件处理函数
+function toggleSidebar() {
+    if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
+        // 如果侧边导航栏隐藏在屏幕左侧，或者未设置 left 属性（即第一次单击导航栏按钮），则显示侧边导航栏
+        sidebar.style.left = '0';
+        clickout.style.right = '0'; // 显示右侧区域
+    } else {
+        // 否则，隐藏侧边导航栏和右侧区域
+        sidebar.style.left = '-250px';
+        clickout.style.right = '-250px';
+    }
+}
+
+// 给导航栏按钮添加点击事件监听器
+navBtn.addEventListener('click', toggleSidebar);
+
+// 给整个页面添加点击事件监听器，用于关闭侧边导航栏和右侧区域
+document.addEventListener('click', function(event) {
+    if (!sidebar.contains(event.target) && event.target !== navBtn) {
+        sidebar.style.left = '-250px';
+        clickout.style.right = '-250px';
+    }
+});
+</script>
+</body>
 </html>
