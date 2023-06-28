@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+        <title>IP</title>
+        <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    fetch('https://api.ipify.org/?format=json')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        var ipAddress = data.ip;
+        document.getElementById('ip-address').textContent = ipAddress;
+      });
+  });
+</script>
+    </head> 
+    <body> 
+    <p>您的IP地址是：<span id="ip-address"></span></p>
+        <h1>IP</h1>
+        <div>
+            Hello World! 
+        </div>  
+    </body>
+</html>
