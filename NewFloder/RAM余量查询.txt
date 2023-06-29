@@ -1,0 +1,26 @@
+su -c 'while true; do cat /proc/meminfo | grep "MemAvailable\|MemFree"; sleep 1; done'
+
+
+
+GB单位版
+su -c 'while true; do awk "/MemAvailable|MemTotal/{printf \"%.2f GB \\n\",\$2/1024/1024};" /proc/meminfo; sleep 1; done'
+
+
+MemTotal: 系统总内存大小，单位为KB
+MemFree: 空闲内存大小，单位为KB
+MemAvailable: 可用内存大小，单位为KB，包括已缓存和未缓存的内存
+Buffers: 用于块设备（如硬盘）操作的缓冲区大小，单位为KB
+Cached: 已缓存的内存大小，单位为KB
+SwapCached: 缓存在交换分区（swap partition）中的内存大小，单位为KB
+Active: 正在使用的内存大小，单位为KB
+Inactive: 不活跃的内存大小，单位为KB
+Active(anon): 正在使用的匿名内存大小，单位为KB
+Inactive(anon): 不活跃的匿名内存大小，单位为KB
+Active(file): 正在使用的文件缓存大小，单位为KB
+Inactive(file): 不活跃的文件缓存大小，单位为KB
+Unevictable: 无法释放的内存大小，单位为KB
+Mlocked: 被锁定的内存大小，单位为KB
+SwapTotal: 交换分区的总大小，单位为KB
+SwapFree: 交换分区中可用的空间大小，单位为KB
+Dirty: 等待被写回磁盘的脏页（dirty page）大小，单位为KB
+Writeback: 正在被写
