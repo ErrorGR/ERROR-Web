@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error's Web</title>
+    <!--字体相关-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="font.css">
+</head>
+
+<body style="position: fixed; overflow: hidden;">
+    <!--默认按钮样式-->
+    <style>
+        button {
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 8px;
+        }
+    </style>
+    <!--背景图片-->
+    <style>
+        body {
+            background-image: url('Background-Chat.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            /* 设置容器高度 */
+            z-index: 1;
+            /* 元素所在层 */
+        }
+
+        body:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 110%;
+            height: 108%;
+            background-color: rgba(255, 255, 255, 0.15);
+            /* 设置50%透明度的白色背景颜色 */
+            z-index: -1;
+            /* 将伪元素置于底部 */
+        }
+    </style>
+    <!--标题-->
+    <div class="title">
+        ChatGPT
+    </div>
+    <style>
+        .title {
+            position: absolute;
+            right: 0px;
+            font-size: 50px;
+            color: #FFFFFF;
+        }
+    </style>
+
+    <!--ChatGPT-Web-->
+    <div style="position: absolute; top: 180px; left: 5px;">
+        <div style="color:#FFFFFF;border-radius: 10px;background-color: rgba(255, 255, 255, 0.4); 
+        border: none; font-size: 22px; width: 360px;">
+该ChatGPT由本网站修改直接打开使用
+        </div>
+    </div>
+    <button class="ChatGPTWeb" onclick="window.location.href='ChatGPT-Web/index.html'">ChatGPT3.0</button>
+    <style>
+        .ChatGPTWeb {
+            width: 110px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            background-color: #FFFFFF80;
+            color: black;
+            position: absolute;
+            top: 130px;
+            left: 5px;
+            cursor: pointer;
+            font-family: myfont;
+            font-size: 20px;
+        }
+    </style>
+
+
+
+    <!--ChatGPTBAI-->
+    <div style="position: absolute; top: 290px; left: 5px;">
+        <div style="color:#FFFFFF;border-radius: 10px;background-color: rgba(255, 255, 255, 0.4); 
+        border: none; font-size: 20px; width: 360px;">
+ChatGPT3.5-APK，已打包成ZIP<br>需要挂VPN使用<br>解压密码联系网页开发者获取
+        </div>
+    </div>
+    <button class="ChatGPTBAI" onclick="window.location.href='蓝奏云'">ChatGPT3.5</button>
+    <style>
+        .ChatGPTBAI {
+            width: 110px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            background-color: #FFFFFF80;
+            color: black;
+            position: absolute;
+            top: 240px;
+            left: 5px;
+            cursor: pointer;
+            font-family: myfont;
+            font-size: 20px;
+        }
+    </style>
+
+
+
+<!--Other ChatGPT-->
+<div style="position: absolute; top: 410px; left: 200px;">
+        <div style="color:#FFFFFF;border-radius: 10px;background-color: rgba(255, 255, 255, 0.0); 
+        border: none; font-size: 30px; width: 200px;">
+其他ChatGPT
+        </div>
+    </div>
+
+<!--Line1-->
+<button class="Line1" onclick="window.location.href='https://chat.1.bnu120.space/'">线路1</button>
+    <style>
+        .Line1 {
+            width: 110px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            background-color: #FFFFFF80;
+            color: black;
+            position: absolute;
+            top: 470px;
+            right: 50px;
+            cursor: pointer;
+            font-family: myfont;
+            font-size: 20px;
+        }
+    </style>
+    
+    <!--Line2-->
+<button class="Line2" onclick="window.location.href='https://chat.2.bnu120.space/'">线路2</button>
+    <style>
+        .Line2 {
+            width: 110px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            background-color: #FFFFFF80;
+            color: black;
+            position: absolute;
+            top: 550px;
+            left: 20px;
+            cursor: pointer;
+            font-family: myfont;
+            font-size: 20px;
+        }
+    </style>
+
+<!--Line3-->
+<button class="Line3" onclick="window.location.href='https://chat.3.bnu120.space/'">线路3</button>
+    <style>
+        .Line3 {
+            width: 110px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            background-color: #FFFFFF80;
+            color: black;
+            position: absolute;
+            top: 550px;
+            right: 50px;
+            cursor: pointer;
+            font-family: myfont;
+            font-size: 20px;
+        }
+    </style>
+
+<!--Line4-->
+<button class="Line4" onclick="window.location.href='https://chat.4.bnu120.space/'">线路4</button>
+    <style>
+        .Line4 {
+            width: 110px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            background-color: #FFFFFF80;
+            color: black;
+            position: absolute;
+            top: 630px;
+            left: 20px;
+            cursor: pointer;
+            font-family: myfont;
+            font-size: 20px;
+        }
+    </style>
+
+<!--Line5-->
+<button class="Line5" onclick="window.location.href='https://chat.5.bnu120.space/'">线路5</button>
+    <style>
+        .Line5 {
+            width: 110px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            background-color: #FFFFFF80;
+            color: black;
+            position: absolute;
+            top: 630px;
+            right: 50px;
+            cursor: pointer;
+            font-family: myfont;
+            font-size: 20px;
+        }
+    </style>
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <pre style="color:#FFFFFF;">
+                          网页版本：Framework-v1.0</pre>
+</body>
+
+</html>

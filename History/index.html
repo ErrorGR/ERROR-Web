@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error's Web</title>
+    <!--字体相关-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="font.css">
+
+<body style="position: fixed; overflow: hidden;">
+    </head>
+
+
+    <!--默认按钮样式-->
+    <style>
+        button {
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 8px;
+        }
+    </style>
+    <!--背景图片-->
+    <style>
+        body {
+            background-image: url('BackgroundHistory.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            /* 设置容器高度 */
+            z-index: 0;
+            /* 元素所在层 */
+        }
+
+        body:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 110%;
+            height: 108%;
+            background-color: rgba(255, 255, 255, 0.15);
+            /* 设置50%透明度的白色背景颜色 */
+            z-index: -1;
+            /* 将伪元素置于底部 */
+        }
+    </style>
+    <!--标题-->
+    <div class="title">
+        网页历史版本
+    </div>
+    <style>
+        .title {
+            color: #AEFFA2;
+            font-size: 40px;
+            position: absolute;
+            top: 20px;
+            left: 50px;
+        }
+    </style>
+
+    <div class="introduce">
+        这里记录了本网站上<br>所有页面的开发版本<br>见证了网页的版本迭代
+    </div>
+    <style>
+        .introduce {
+            color: #AEFFA2;
+            font-size: 25px;
+            position: absolute;
+            top: 290px;
+            left: 0px;
+        }
+    </style>
+    <button class="firstpage" onclick="firstpage();">首页
+    </button>
+    <script>
+        function firstpage() {
+            window.location.href = "FirstPage/index.html";
+        }
+    </script>
+    <style>
+        .firstpage {
+            position: absolute;
+            top: 480px;
+            left: 230px;
+            font-size: 20px;
+            font-family: myfont;
+            border-radius: 20px;
+            background: #18A05885;
+        }
+    </style>
+    <button class="homepage"onclick="homepage();">主页
+    </button>
+<script>
+        function homepage() {
+            window.location.href = "HomePage/index.html";
+        }
+    </script>
+    <style>
+        .homepage {
+            position: absolute;
+            top: 420px;
+            left: 60px;
+            font-size: 20px;
+            font-family: myfont;
+            border-radius: 20px;
+            background: #A1FBFB80;
+
+        }
+    </style>
+    <button class="chat" onclick="chat();">ChatGPT
+    </button>
+    <script>
+        function chat() {
+            window.location.href = "ChatGPT/index.html";
+        }
+    </script>
+    <style>
+        .chat {
+            position: absolute;
+            top: 480px;
+            left: 60px;
+            font-size: 20px;
+            font-family: myfont;
+            border-radius: 20px;
+            background: #18A05885;
+        }
+    </style>
+    <button class="toolbox" onclick="toolbox();">工具箱
+    </button>
+<script>
+        function toolbox() {
+            window.location.href = "Toolbox/index.html";
+        }
+    </script>
+    <style>
+        .toolbox {
+            position: absolute;
+            top: 540px;
+            left: 60px;
+            font-size: 20px;
+            font-family: myfont;
+            border-radius: 20px;
+            background: #48A0FF80;
+        }
+    </style>
+    <button class="tools"onclick="tools();">小程序
+    </button>
+<script>
+        function tools() {
+            window.location.href = "Tools/index.html";
+        }
+    </script>
+    <style>
+        .tools {
+            position: absolute;
+            top: 540px;
+            left: 190px;
+            font-size: 20px;
+            font-family: myfont;
+            border-radius: 20px;
+            background: #B4E8CE90;
+        }
+    </style>
+    <button class="starrysky"onclick="starrysky();">星环
+    </button>
+<script>
+        function starrysky() {
+            window.location.href = "Starry Sky/index.html";
+        }
+    </script>
+    <style>
+        .starrysky {
+            position: absolute;
+            top: 600px;
+            left: 70px;
+            font-size: 20px;
+            font-family: myfont;
+            border-radius: 20px;
+            background: #D1A9F980;
+        }
+    </style>
+    <button class="historyweb" onclick="historyweb();">网页历史
+    </button>
+<script>
+        function historyweb() {
+            window.location.href = "History/index.html";
+        }
+    </script>
+    <style>
+        .historyweb {
+            position: absolute;
+            top: 600px;
+            left: 230px;
+            font-size: 20px;
+            font-family: myfont;
+            border-radius: 20px;
+            background: #F8A8D090;
+        }
+    </style>
+    <button class="advice"onclick="advices();">建议/反馈
+    </button>
+<script>
+        function advices() {
+            window.location.href = "Advices/index.html";
+        }
+    </script>
+    <style>
+        .advice {
+            position: absolute;
+            top: 660px;
+            left: 180px;
+            font-size: 20px;
+            font-family: myfont;
+            border-radius: 20px;
+            background: #FFFFFF85;
+        }
+    </style>
+    <button class="tech" onclick="tech();">相关技术
+    </button>
+    <script>
+        function tech() {
+            window.location.href = "Others/";
+        }
+    </script>
+    <style>
+        .tech {
+            position: absolute;
+            top: 400px;
+            left: 250px;
+            font-size: 20px;
+            font-family: myfont;
+            border-radius: 20px;
+            color: #F7FF17;
+            background: #F8A8D099;
+        }
+    </style>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <pre style="color:#000000;">
+                         网页版本：Framework-v1.0</pre>
+</body>
+
+</html>

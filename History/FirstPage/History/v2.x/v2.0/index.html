@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error's Web</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 侧边导航栏的样式 */
+        #sidebar {
+            position: fixed;
+            /* 固定在屏幕上方不动 */
+            top: 0;
+            left: -250px;
+            /* 初始状态隐藏在屏幕左侧 */
+            width: 200px;
+            height: 100%;
+            background-color: #A2A2A299;
+            < !--导航栏颜色（#xxxxxx为颜色代码后面xx为透明度xx%-->
+        }
+
+        #sidebar ul {
+            list-style: none;
+        }
+
+        #sidebar a {
+            font-size: 20px;
+            /* 修改字体大小 */
+            line-height: 60px;
+            /* 修改行高，即调整两行文字之间的间距 */
+        }
+
+        /* 主内容区的样式 */
+        #main {
+            margin-left: 0px;
+            /* 在侧边导航栏显示时，主内容区向右偏移 */
+            padding: px;
+        }
+
+        /* 导航栏按钮的样式 */
+        #navBtn {
+            position: fixed;
+            /* 固定在屏幕上方不动 */
+            < !-- background-color: #A7A7A7;
+            -->top: 10px;
+            left: 8px;
+            font-size: 33px;
+            height: 40px;
+            width: 38px;
+        cursor: pointer;
+        z-index: 9999;
+        }
+    </style>
+</head>
+
+
+
+
+
+
+
+
+<!-- 为导航栏添加过渡效果 -->
+<style>
+    #sidebar {
+        transition: left 0.8s;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+<!--背景图片-->
+<style>
+    body {
+        background-image: url('Home.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+
+<style>
+    /* 去掉超链接下划线 */
+    a {
+        text-decoration: none;
+    }
+</style>
+
+
+
+
+
+
+
+<body>
+    <!-- 导航栏按钮 -->
+    <div style="color:#FFFFFF;" id="navBtn">&#9776;</div>
+
+
+    <!-- 侧边导航栏 -->
+    <div id="sidebar">
+        <ul>
+            <!--左侧导航栏名字-->
+           </ul>
+    </div>
+
+
+
+
+
+    <!-- 主内容区 -->
+    <div id="main">
+        <br>
+        <h1 style="color:#FFFFFF;">ERROR </h1>
+
+        <div style="color:#FFFFFF;">
+            Welcome to
+        </div>
+        <div style="color:#FFFFFF;">
+            ERROR's Web！
+        </div>
+        <div style="color:#FFFFFF;">
+            ʕ ᵔᴥᵔ ʔ
+        </div>
+        <div style="color:#FFFFFF;">
+            别急
+        </div>
+        <div style="color:#FFFFFF;">
+            虽然现在还啥都没有
+        </div>
+        <div style="color:#FFFFFF;">
+            _(:з」∠)_
+        </div>
+        <!-- </p>放一些有用的网站吧：</p>-->
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <div style="color:#FFFFFF;">
+        放一些有用的网站吧：
+    </div>
+    <!--超链接   <li><a href="#">Link.Name</a></li>    -->
+    <a style="color:#FFFFFF;" href="https://www.baidu.com">有不会的东西可以去这里٩( 'ω' )و </a>
+    <br>
+    <a style="color:#FFFFFF;" href="https://www.bilibili.com">伟大的B站(˵¯͒〰¯͒˵)</a>
+    <br>
+
+    <a style="color:#FFFFFF;" href="https://www.pixiv.net">别点！我知道你进不去（手动滑稽）</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <pre style="color:#FFFFFF;">
+                                网页版本：Test-v2.0
+                  （找找v1.0在哪里？∠( ᐛ 」∠)_看戏）
+                </pre>
+    </div>
+    <!--导航栏监听等-->
+    <script>
+        // 获取导航栏按钮、侧边导航栏和主内容区元素
+        const navBtn = document.getElementById('navBtn');
+        const sidebar = document.getElementById('sidebar');
+        const main = document.getElementById('main');
+
+        // 导航栏按钮点击事件处理函数
+        function toggleSidebar() {
+            if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
+                // 如果侧边导航栏隐藏在屏幕左侧，或者未设置 left 属性（即第一次单击导航栏按钮），则显示侧边导航栏
+                sidebar.style.left = '0';
+            } else {
+                // 否则，隐藏侧边导航栏
+                sidebar.style.left = '-250px';
+            }
+        }
+
+        // 主内容区点击事件处理函数，用于关闭侧边导航栏
+        function closeSidebar(event) {
+            if (event.target === main) {
+                // 如果用户单击了主内容区，则隐藏侧边导航栏
+                sidebar.style.left = '-250px';
+            }
+        }
+
+        // 给导航栏按钮添加点击事件监听器
+        navBtn.addEventListener('click', toggleSidebar);
+
+        // 给整个页面添加点击事件监听器，用于关闭侧边导航栏
+        document.addEventListener('click', function(event) {
+            if (!sidebar.contains(event.target) && event.target !== navBtn) {
+                // 如果用户单击了页面上除侧边导航栏和导航栏按钮以外的部分，则隐藏侧边导航栏
+                sidebar.style.left = '-250px';
+            }
+        });
+    </script>
+</body>
+
+</html>

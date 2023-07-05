@@ -1,0 +1,78 @@
+
+<!--背景图片-->
+<style>
+    body {
+        background-image: url('Home.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        position: relative;
+        /* 设置容器高度 */
+        z-index: 1;
+        /* 元素所在层 */
+    }
+
+    body:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 101%;
+        background-color: rgba(255, 255, 255, 0.25);
+        /* 设置50%透明度的白色背景颜色 */
+        z-index: -1;
+        /* 将伪元素置于底部 */
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+        <div style="color:#FFFFFF;">
+            Welcome to
+        </div>
+        <div style="color:#FFFFFF;">
+            ERROR's Web！
+        </div>
+        <div style="color:#FFFFFF;">
+            ʕ ᵔᴥᵔ ʔ
+        </div>
+        <br><br><br><br><br><br><br><br>
+        <div style="color:#FFFFFF;">
+            别急
+        </div>
+        <div style="color:#FFFFFF;">
+            虽然现在还啥都没有
+        </div>
+        <div style="color:#FFFFFF;">
+            _(:з」∠)_
+        </div>
+        <!-- </p>放一些有用的网站吧：</p>-->
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <div style="color:#FFFFFF;">
+        放一些有用的网站吧：
+    </div>
+    <!--超链接   <li><a href="#">Link.Name</a></li>    -->
+    <a style="color:#FFFFFF;" href="https://www.baidu.com">有不会的东西可以去这里٩( 'ω' )و </a>
+    <br>
+    <a style="color:#FFFFFF;" href="https://www.bilibili.com">伟大的B站(˵¯͒〰¯͒˵)</a>
+    <br>
+
+    <a style="color:#FFFFFF;" href="https://www.pixiv.net">别点！我知道你进不去（手动滑稽）</a>
+    <br>
+    <a style="color:#FFFFFF;">往下再翻翻？(*^ω^*)</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <pre style="color:#FFFFFF;">
+                                网页版本：正式版v1.0
+            （找找Test-v1.0在哪里？∠( ᐛ 」∠)_看戏）</pre>
+    </div>

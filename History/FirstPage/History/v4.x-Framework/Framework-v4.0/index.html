@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error's Web</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        /* 侧边导航栏的样式 */
+        #sidebar {
+            position: fixed;
+            /* 固定在屏幕上方不动 */
+            top: 0;
+            left: -250px;
+            /* 初始状态隐藏在屏幕左侧 */
+            width: 200px;
+            height: 100%;
+            background-color: #A2A2A299;
+            < !--导航栏颜色（#xxxxxx为颜色代码后面xx为透明度xx%-->
+        }
+        #sidebar ul {
+            list-style: none;
+        }
+
+        #sidebar a {
+            font-size: 20px;
+            /* 修改字体大小 */
+            line-height: 60px;
+            /* 修改行高，即调整两行文字之间的间距 */
+        }
+
+        /* 导航栏按钮的样式 */
+        #navBtn {
+            position: fixed;
+            /* 固定在屏幕上方不动 */
+            top: 2px;
+            left: 8px;
+            font-size: 33px;
+            height: 40px;
+            width: 38px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+        /*右侧代码*/
+        #clickout {
+            position: fixed;
+            /* 固定在屏幕上方不动 */
+            top: 0;
+            right: -250px;
+            /* 初始状态隐藏在屏幕右侧 */
+            width: 200px;
+            height: 100%;
+            background-color: transparent;
+            < !--导航栏颜色（#xxxxxx为颜色代码后面xx为透明度xx%-->
+        }
+    </style>
+    <!-- 为导航栏添加过渡效果 -->
+    <style>
+        #sidebar {
+            transition: left 0.9s;
+        }
+    </style>
+    <style>
+        /* 去掉超链接下划线 */
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <!-- 按钮相关设置 -->
+    <style>
+        button {
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        /* 导航栏目录 */
+        .button-0 {
+            width: 200px;
+            height: 50px;
+            background-color: #72727227;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 30px;
+            font-family: Myfont;
+            opacity: 0.5;
+        }
+
+        .button-0:hover {
+            background-color: #0000000;
+            color: #FFFFFF;
+        }
+
+        /* 首页 */
+        .button-firstpage {
+            width: 200px;
+            height: 50px;
+            background-color: #D2F99180;
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-firstpage:hover {
+            background-color: #E8F8BD90;
+        }
+
+        /* 主页 */
+        .button-homepage {
+            width: 200px;
+            height: 50px;
+            background-color: #A1FBFB80;
+            position: absolute;
+            top: 100px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-homepage:hover {
+            background-color: #E8F8BD90;
+        }
+
+        /* ChatGPT */
+        .button-chat {
+            width: 200px;
+            height: 50px;
+            background-color: #18A05885;
+            position: absolute;
+            top: 150px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-chat:hover {
+            background-color: #E8F8BD90;
+            color: white;
+        }
+
+        /* 工具箱 */
+        .button-toolbox {
+            width: 200px;
+            height: 50px;
+            background-color: #48A0FF80;
+            position: absolute;
+            top: 200px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-toolbox:hover {
+            background-color: #F8A8D090;
+            color: white;
+        }
+        /* tools */
+        .button-tools {
+            width: 200px;
+            height: 50px;
+            background-color: #B4E8CE90;
+            position: absolute;
+            top: 250px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-tools:hover {
+            background-color: #B4E8CE90;
+            color: white;
+        }
+
+
+        /* 星环 */
+        .button-starrysky {
+            width: 200px;
+            height: 50px;
+            background-color: #D1A9F980;
+            position: absolute;
+            top: 300px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-starrysky:hover {
+            background-color: #E8F8BD90;
+            color: white;
+        }
+
+        /* 网站历史 */
+        .button-historyweb {
+            width: 200px;
+            height: 50px;
+            background-color: #F8A8D090;
+            position: absolute;
+            top: 350px;
+            left: 0px;
+            font-size: 20px;
+            font-family: Myfont;
+        }
+
+        .button-historyweb:hover {
+            background-color: #F8A8D090;
+            color: white;
+        }
+
+        /* 底部建议 */
+        .button-advice {
+            width: 90px;
+            height: 50px;
+            background-color: #FFFFFF00;
+            position: absolute;
+            top: 730px;
+            left: 50px;
+            font-size: 15px;
+            font-family: Myfont;
+        }
+
+        .button-advice:hover {
+            background-color: #F8A8D090;
+            color: white;
+        }
+    </style>
+<!--字体相关-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="font.css">
+</head>
+
+
+
+
+
+
+
+
+
+<body>
+    <!-- 导航栏按钮 -->
+    <div style="color:#FFFFFF;" id="navBtn">&#9776;</div>
+    <!--这是右侧区域-->
+    <div id="clickout"></div>
+    <!-- 左侧导航栏 -->
+    <div id="sidebar">
+        <ul>
+            <!--左侧导航栏-->
+            <button class="button-0" style="color: rgb(0,0,0);left">目录</button>
+            <button onclick="loadFirstPage()" class="button-firstpage">首页</button>
+            <button onclick="loadHomePage()" class="button-homepage">主页</button>
+            <button onclick="loadChatGPT()" class="button-chat">ChatGPT</button>
+            <button onclick="loadToolBox()" class="button-toolbox">工具箱</button>
+            <button onclick="loadTools()" class="button-tools">小程序</button>
+            <button onclick="loadStarrySky()" class="button-starrysky">星环</button>
+            <button onclick="loadHistoryWeb()" class="button-historyweb">网站历史</button>
+            <button onclick="loadAdvices()" class="button-advice">建议/反馈</button>
+        </ul>
+    </div>
+
+<!--消除iframe自带边框-->
+<style>
+    iframe {
+  border: none;
+}
+</style>
+<iframe style="width: 100%; height: 800px;"src="FirstPage/index.html" id="myFrame"></iframe>
+<script>
+        function loadFirstPage() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "FirstPage/index.html";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
+        }
+
+        function loadHomePage() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "HomePage/index.html";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
+        }
+
+        function loadChatGPT() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "ChatGPT/index.html";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            myFrame.style.top = "-10px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
+        }
+
+        function loadToolBox() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "ToolBox/index.html";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            myFrame.style.top = "-10px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
+        }
+
+        function loadTools() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "LostPage404/index.html";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            myFrame.style.top = "-10px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
+        }
+
+        function loadStarrySky() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "Starry Sky";
+            myFrame.style.width = "100%";
+            myFrame.style.height = "800px";
+            myFrame.style.top = "-10px";
+            document.body.style.overflow = "hidden";// 阻止页面滚动
+        }
+
+        function loadHistoryWeb() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "https://errorgr.gio/ERROR-Web/HomePage";
+        }
+
+        function loadAdvices() {
+            var myFrame = document.getElementById("myFrame");
+            myFrame.src = "Advices/index.html";
+        }
+    </script>
+
+<!--导航栏监听等-->
+<script>
+// 获取导航栏按钮、侧边导航栏元素和右侧区域元素
+const navBtn = document.getElementById('navBtn');
+const sidebar = document.getElementById('sidebar');
+const clickout = document.getElementById('clickout');
+
+// 导航栏按钮点击事件处理函数
+function toggleSidebar() {
+    if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
+        // 如果侧边导航栏隐藏在屏幕左侧，或者未设置 left 属性（即第一次单击导航栏按钮），则显示侧边导航栏
+        sidebar.style.left = '0';
+        clickout.style.right = '0'; // 显示右侧区域
+    } else {
+        // 否则，隐藏侧边导航栏和右侧区域
+        sidebar.style.left = '-250px';
+        clickout.style.right = '-250px';
+    }
+}
+
+// 给导航栏按钮添加点击事件监听器
+navBtn.addEventListener('click', toggleSidebar);
+
+// 给整个页面添加点击事件监听器，用于关闭侧边导航栏和右侧区域
+document.addEventListener('click', function(event) {
+    if (!sidebar.contains(event.target) && event.target !== navBtn) {
+        sidebar.style.left = '-250px';
+        clickout.style.right = '-250px';
+    }
+});
+</script>
+</body>
+</html>

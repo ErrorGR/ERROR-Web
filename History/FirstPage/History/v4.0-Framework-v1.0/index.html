@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error's Web</title>
+    <style>
+body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;<!--固定页面阻止滚动-->
+        }
+</style>
+<!--字体相关-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="font.css">
+
+</head>
+
+
+
+
+<body>
+
+<!--背景图片-->
+        <style>
+            body {
+                background-image: url('Background-FirstPage.jpg');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                position: relative;
+                /* 设置容器高度 */
+                z-index: 1;
+                /* 元素所在层 */
+            }
+
+            body:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 101%;
+                background-color: rgba(255, 255, 255, 0.25);
+                /* 设置50%透明度的白色背景颜色 */
+                z-index: -1;
+                /* 将伪元素置于底部 */
+            }
+        </style>
+
+
+
+
+        <br>
+     
+        
+        
+<!-- 右上角时间 -->
+<div id="clock" style="color: #FFFFFF97;font-size: 23px; position: absolute; top: 10px; right: 0; display: inline-block;">
+    <div>今天是：</div>
+    <span class="date"></span><br>
+    <span class="time"></span><br>
+    <span class="day"></span>
+</div>
+<script src="time.js"></script>
+<!-- 右上角时间 -->
+
+        <div style="margin-left: 50px;color:#FFFFFF;font-size:30px;">
+ERROR的小破站
+</div>
+<br><br>
+
+
+        <div style="color:#FFFFFF;font-size:40px;">
+            欢迎来到
+        </div>
+        <div style="color:#FFFFFF;font-size:25px;">
+            ERROR的个人网站！ʕ ᵔᴥᵔ ʔ
+        </div>
+        <br><br><br>
+        <div style="color:#FFFB00;font-size:20px;">
+        入站请挂VPN以获取更好的体验
+</div>
+        <!--随机诗句相关代码↓-->
+        <div style="color:#FFFFFF;font-size:25px;">
+随机一言：
+</div>
+        <div style=";font-size:24px;">
+            <i><span style="color: #FFFFFF; font-size: 22px;" id="random-poem"></span></i>
+        </div>
+
+        <script src="poem-library.js"></script>
+        <script>
+            const randomPoem = getRandomPoem();
+            document.getElementById('random-poem').innerText = randomPoem;
+        </script>
+        <!--随机诗句相关代码↑-->
+        
+        
+<br><br><br><br><br><br><br>
+        
+        
+        
+
+        
+
+        <pre style="font-family: myfont;color:#FFFFFF;font-size:20px;">
+这里是一个自由、开放的空间
+我会分享一些好用的工具软件和小程序
+以及其他的一些东西。
+在这里，我可以提供有益的信息和建议
+如果你有任何问题或者想法
+都可以随时联系我。
+</pre>
+
+
+
+
+<br><br><br><br><br><br><br>
+
+
+
+        
+        <pre style="color:#FFFFFF;">
+                           网页版本：Framework-v4.0
+            （找找Test-v1.0在哪里？∠( ᐛ 」∠)_看戏）</pre>
+    </div>
+<br>
+
+
+
+</body>
+
+</html>

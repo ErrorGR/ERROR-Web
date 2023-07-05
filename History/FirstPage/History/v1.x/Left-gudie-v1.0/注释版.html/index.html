@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>侧边导航栏示例</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 侧边导航栏的样式 */
+        #sidebar {
+            position: fixed; /* 固定在屏幕上方不动 */
+            top: 0;
+            left: -250px; /* 初始状态隐藏在屏幕左侧 */
+            width: 250px;
+            height: 100%;
+            background-color: #ccc;
+            transition: left 0.5s; /* 添加过渡效果 */
+        }
+
+        /* 主内容区的样式 */
+        #main {
+            margin-left: 250px; /* 在侧边导航栏显示时，主内容区向右偏移 */
+            padding: 20px;
+        }
+
+        /* 导航栏按钮的样式 */
+        #navBtn {
+            position: fixed; /* 固定在屏幕上方不动 */
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏按钮 -->
+    <div id="navBtn">&#9776;</div>
+
+    <!-- 侧边导航栏 -->
+    <div id="sidebar">
+        <ul>
+            <li><a href="#">链接1</a></li>
+            <li><a href="#">链接2</a></li>
+            <li><a href="#">链接3</a></li>
+        </ul>
+    </div>
+
+    <!-- 主内容区 -->
+    <div id="main">
+        <p>1234</p>
+    </div>
+
+    <script>
+        // 获取导航栏按钮、侧边导航栏和主内容区元素
+        const navBtn = document.getElementById('navBtn');
+        const sidebar = document.getElementById('sidebar');
+        const main = document.getElementById('main');
+
+        // 导航栏按钮点击事件处理函数
+        function toggleSidebar() {
+            if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
+                // 如果侧边导航栏隐藏在屏幕左侧，或者未设置 left 属性（即第一次单击导航栏按钮），则显示侧边导航栏
+                sidebar.style.left = '0';
+            } else {
+                // 否则，隐藏侧边导航栏
+                sidebar.style.left = '-250px';
+            }
+        }
+
+        // 主内容区点击事件处理函数，用于关闭侧边导航栏
+        function closeSidebar(event) {
+            if (event.target === main) {
+                // 如果用户单击了主内容区，则隐藏侧边导航栏
+                sidebar.style.left = '-250px';
+            }
+        }
+
+        // 给导航栏按钮添加点击事件监听器
+        navBtn.addEventListener('click', toggleSidebar);
+
+        // 给整个页面添加点击事件监听器，用于关闭侧边导航栏
+        document.addEventListener('click', function(event) {
+            if (!sidebar.contains(event.target) && event.target !== navBtn) {
+                // 如果用户单击了页面上除侧边导航栏和导航栏按钮以外的部分，则隐藏侧边导航栏
+                sidebar.style.left = '-250px';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<div class="container-1">
+  <div class="image-1">
+    <img src="LTT.jpg" alt="Image">
+  </div>
+  <div class="content-1">
+    <div class="text-1">
+      <div>李跳跳2.2</div>
+      <div>李跳跳是一个通过无障碍权限识别并“跳过”来跳过开屏广告的一款App</div>
+    </div>
+    <div class="button-1">
+      <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/ToolBox/Tools/李跳跳2.2.apk'"class="rounded">下载</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.container-1 {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  border-width: 2px;
+  position:absolute;
+  top: 300px;
+  left: 10px;
+  right: 10px;
+  color: black;
+}
+
+.image-1 > img {
+  max-width: 85%;
+}
+
+.content-1 {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center; /* 将子元素在容器中水平居中对齐 */
+  flex-wrap: wrap;
+}
+
+.text-1 {
+  flex-basis: 80%;
+}
+
+.button-1 {            /*“下载”按钮颜色*/
+  align-self: center;
+  justify-self: center;
+}
+.button-1 button {        /*“下载”按钮背景*/
+  background-color: #167C53;
+}
+.rounded-1 {        /*“下载”二字*/
+  border-radius: 10px;
+}
+</style>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error's Web</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /*固定页面阻止滚动*/
+        }
+
+        #sidebar ul {
+            list-style: none;
+        }
+
+        #sidebar a {
+            font-size: 20px;
+            /* 修改字体大小 */
+            line-height: 60px;
+            /* 修改行高，即调整两行文字之间的间距 */
+        }
+    </style>
+    <!--字体相关-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="font.css">
+    <!--滚动框-->
+    <style>
+        /* 容器样式 */
+        .container {
+            position: fixed;
+            width: 390px;
+            height: 700px;
+            border-radius: 50px;
+            /* 圆角半径 */
+            overflow: hidden;
+            /* 溢出部分隐藏 */
+            z-index: 2;
+        }
+
+        /* 滑块样式 */
+        .slider {
+            width: 100%;
+            height: 100%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            /* 列排列 */
+            overflow-y: scroll;
+            /* 纵向滚动条 */
+
+        }
+
+        /* 每个滑块样式 */
+        .slide {
+            display: flex;
+            align-items: center;
+            /* 垂直居中 */
+            padding: 20px;
+            /* 内边距 */
+            background-color: #FFFFFF90;
+            /* 背景颜色 */
+            border-radius: 10px;
+            /* 圆角半径 */
+            margin-left: 15px;
+            margin-right: 20px;
+            /* 底部外边距 */
+            margin-bottom: 20px;
+            /* 顶部外边距 */
+            margin-top: 0px;
+        }
+
+        /*最后一个滑块bottom:xx px*/
+        .slide:last-child {
+            margin-bottom: 60px;
+        }
+
+        /*首个滑块top:xx px*/
+        .slide:first-child {
+            margin-top: 20px;
+        }
+
+        .left {
+            flex-basis: 10%;
+            /* 左侧宽度为20% */
+            margin-right: 10px;
+            /* 右侧外边距为10像素 */
+            font-size: 30px;
+        }
+
+        .middle {
+            flex-basis: 80%;
+            /* 中间部分宽度为70% */
+            width: 70%;
+            height: 90%;
+            font-size: 16px;
+            /* 字体大小 */
+            line-height: 1.2;
+            /* 行高 */
+            color: black;
+            /* 字体颜色 */
+            word-break: break-all;
+            /* 换行 */
+        }
+
+        .right {
+            flex-basis: 10%;
+            /* 右侧宽度为10% */
+            text-align: center;
+            /* 内容居中 */
+        }
+
+        .right button {
+            width: 100%;
+            /* 按钮宽度为100% */
+            padding: 8px;
+            /* 按钮内边距 */
+            border: none;
+            /* 去除按钮边框 */
+            cursor: pointer;
+            /* 设置鼠标指针为手形 */
+            font-family: Myfont;
+            background-color: #167C53;
+            white-space: nowrap;
+            /* 防止换行 */
+            border-radius: 10px;
+            /* 添加圆角 */
+        }
+
+        .right button span {
+            display: flex;
+            /* 创建一个弹性容器 */
+            flex-direction: row;
+            /* 子元素横向排列 */
+            align-items: center;
+            /* 垂直居中 */
+            height: 100%;
+            /* 填满整个按钮 */
+            font-size: 16px;
+            /* 字体大小 */
+            padding: 8px;
+            /* 文本内边距 */
+        }
+
+
+        .text-box {
+            width: 100%;
+            /* 指定宽度为100% */
+            height: 100%;
+            /* 指定高度为100% */
+            box-sizing: border-box;
+            /* 设置盒子模型为border-box，以便将内边距和边框计算在盒子的总宽度和高度之内 */
+            padding: 10px;
+            /* 内边距为10像素 */
+            font-size: 16px;
+            /* 字体大小为16像素 */
+            border: none;
+            /* 去除边框 */
+            border-radius: 5px;
+            /* 设置圆角半径为5像素 */
+            background-color: #EEE;
+            /* 背景颜色为浅灰色 */
+            line-height: 1.5;
+            /* 行高为1.5倍字体大小 */
+            color: black;
+            /* 字体颜色为黑色 */
+            resize: none;
+            /* 禁止拖拽改变大小 */
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+
+<!--https://errorgr.github.io/ERROR-Web/ToolBox/APK-icon/-->
+
+
+
+
+
+<body>
+    <!--默认按钮样式-->
+    <style>
+        button {
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 8px;
+        }
+    </style>
+
+    <!--背景图片-->
+    <style>
+        body {
+            background-image: url('Background.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            /* 设置容器高度 */
+            z-index: 1;
+            /* 元素所在层 */
+        }
+
+        body:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 101%;
+            background-color: rgba(255, 255, 255, 0.25);
+            /* 设置50%透明度的白色背景颜色 */
+            z-index: -1;
+            /* 将伪元素置于底部 */
+        }
+    </style>
+    <style>
+        .my-div {
+            font-family: Myfont;
+        }
+    </style>
+
+    <!--左上角灰色圆角-->
+    <div class="corner-block"></div>
+    <style>
+        .corner-block {
+            width: 40px;
+            height: 40px;
+            background-color: #D1D1D190;
+            border-radius: 10px;
+            position: absolute;
+            top: 5px;
+            left: 3px;
+        }
+    </style>
+
+
+
+    <br>
+    <div style="text-align:center;font-size:35px; position: absolute; top: 30px; left: 120px; inline-block;">
+        <div class="my-div" style="color:#FFFFFF;">历史之间</div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="slider">
+            <!-- 滑块1 -->
+            <div class="slide">
+                <div class="left">v1.0
+                </div>
+                <div class="middle"><span style="font-size: 25px;">第一版</span><br>页面与导航栏共存于一个页面（已发布）</div>
+                <div class="right">
+                    <button style="font-family: Myfont; background-color: #F3A9B890;" onclick="window.location.href='History/HomePage-v1.0/index.html'">查看</button>
+                </div>
+            </div>
+
+            <!-- 滑块2 -->
+            <div class="slide">
+                <div class="left">v2.0
+                </div>
+                <div class="middle">增加代码优化相关bug等</div>
+                <div class="right">
+                    <button style="font-family: Myfont; background-color: #F3A9B890;" onclick="window.location.href='History/HomePage-v2.0/index.html'">查看</button>
+                </div>
+            </div>
+            <!-- 滑块3 -->
+            <div class="slide">
+                <div class="left">v3.0
+                </div>
+                <div class="middle"><span style="font-size: 25px;">Framework-v1.0</span><br>使用新版页面与导航分离的方式，删除导航栏代码和冗余无用代码，加入字体，适配页面</div>
+                <div class="right">
+                    <button style="font-family: Myfont; background-color: #F3A9B890;" onclick="window.location.href='History/HomePage-Framework-v3.0/index.html'">查看</button>
+                </div>
+            </div>
+            <!--截止下面两个是上面的-->
+        </div>
+    </div>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+</html>

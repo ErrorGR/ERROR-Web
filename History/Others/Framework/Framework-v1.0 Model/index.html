@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error's Web</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 侧边导航栏的样式 */
+        #sidebar {
+            position: fixed;
+            /* 固定在屏幕上方不动 */
+            top: 0;
+            left: -250px;
+            /* 初始状态隐藏在屏幕左侧 */
+            width: 200px;
+            height: 100%;
+            background-color: #A2A2A299;
+            < !--导航栏颜色（#xxxxxx为颜色代码后面xx为透明度xx%-->
+        }
+
+        #sidebar ul {
+            list-style: none;
+        }
+
+        #sidebar a {
+            font-size: 20px;
+            /* 修改字体大小 */
+            line-height: 60px;
+            /* 修改行高，即调整两行文字之间的间距 */
+        }
+
+        /* 主内容区的样式 */
+        #main {
+            margin-left: 0px;
+            /* 在侧边导航栏显示时，主内容区向右偏移 */
+            padding: px;
+        }
+
+        /* 导航栏按钮的样式 */
+        #navBtn {
+            position: fixed;
+            /* 固定在屏幕上方不动 */
+            top: 10px;
+            left: 8px;
+            font-size: 33px;
+            height: 40px;
+            width: 38px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+    </style>
+
+
+
+    <title>Button styles</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+    <script>
+        window.onload = function() {
+            // 页面加载完成后自动加载（首页文件名） 文件
+            loadScript(document.querySelector('.button-2[data-file="0.txt"]')); //0.txt为首页文件名
+        };
+    </script>
+</head>
+
+
+
+
+
+
+
+
+<!-- 为导航栏添加过渡效果 -->
+<style>
+    #sidebar {
+        transition: left 0.8s;
+    }
+</style>
+
+<style>
+    /* 去掉超链接下划线 */
+    a {
+        text-decoration: none;
+    }
+</style>
+
+
+<!-- 按钮相关设置 -->
+<style>
+    button {
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    /* 导航栏目录 */
+    .button-0 {
+        width: 200px;
+        height: 50px;
+        background-color: #72727227;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 25px;
+        opacity: 0.5;
+    }
+
+    .button-0:hover {
+        background-color: #0000000;
+        color: #FFFFFF;
+    }
+
+    /* 样式1 */
+    .button-1 {
+        width: 200px;
+        height: 50px;
+        background-color: #D2F99180;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+    }
+
+    .button-1:hover {
+        background-color: #E8F8BD90;
+    }
+
+    /* 样式2 */
+    .button-2 {
+        width: 200px;
+        height: 50px;
+        background-color: #A1FBFB80;
+        position: absolute;
+        top: 100px;
+        left: 0px;
+    }
+
+    .button-2:hover {
+        background-color: #E8F8BD90;
+    }
+
+    /* 样式3 */
+    .button-3 {
+        width: 200px;
+        height: 50px;
+        background-color: #D1A9F980;
+        position: absolute;
+        top: 150px;
+        left: 0px;
+    }
+
+    .button-3:hover {
+        background-color: #E8F8BD90;
+        color: white;
+    }
+
+    /* 样式4 */
+    .button-4 {
+        width: 200px;
+        height: 50px;
+        background-color: #F8A8D090;
+        position: absolute;
+        top: 200px;
+        left: 0px;
+    }
+
+    .button-4:hover {
+        background-color: #F8A8D090;
+        color: white;
+    }
+</style>
+
+
+
+
+
+
+
+<body>
+    <!-- 导航栏按钮 -->
+    <div style="color:#FFFFFF;" id="navBtn">&#9776;</div>
+
+
+    <!-- 左侧导航栏 -->
+    <div id="sidebar">
+        <ul>
+            <!--左侧导航栏-->
+            <button class="button-0" style="color: rgb(0,0,0);">目录</button>
+            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/LostPage404/index.html'" class="button-1">主页</button>
+            <button class="button-2" data-file="a.txt" onclick="loadScript(this)">现在是空哒</button>
+
+
+            <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/Starry Sky/index.html'" class="button-3">星环</button>
+
+            <button class="button-4" data-file="b.txt" onclick="loadScript(this)">历史版网页</button>
+
+        </ul>
+    </div>
+
+
+
+
+
+    <!-- 主内容区 -->
+    <div id="main">
+
+
+        <div id="Load">//读取需要加载的页面
+
+
+
+
+
+
+            <!--导航栏监听等-->
+            <script>
+                // 获取导航栏按钮、侧边导航栏和主内容区元素
+                const navBtn = document.getElementById('navBtn');
+                const sidebar = document.getElementById('sidebar');
+                const main = document.getElementById('main');
+
+                // 导航栏按钮点击事件处理函数
+                function toggleSidebar() {
+                    if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
+                        // 如果侧边导航栏隐藏在屏幕左侧，或者未设置 left 属性（即第一次单击导航栏按钮），则显示侧边导航栏
+                        sidebar.style.left = '0';
+                    } else {
+                        // 否则，隐藏侧边导航栏
+                        sidebar.style.left = '-250px';
+                    }
+                }
+
+                // 主内容区点击事件处理函数，用于关闭侧边导航栏
+                function closeSidebar(event) {
+                    if (event.target === main) {
+                        // 如果用户单击了主内容区，则隐藏侧边导航栏
+                        sidebar.style.left = '-250px';
+                    }
+                }
+
+                // 给导航栏按钮添加点击事件监听器
+                navBtn.addEventListener('click', toggleSidebar);
+
+                // 给整个页面添加点击事件监听器，用于关闭侧边导航栏
+                document.addEventListener('click', function(event) {
+                    if (!sidebar.contains(event.target) && event.target !== navBtn) {
+                        // 如果用户单击了页面上除侧边导航栏和导航栏按钮以外的部分，则隐藏侧边导航栏
+                        sidebar.style.left = '-250px';
+                    }
+                });
+
+
+                function loadScript(button) {
+                    // 获取按钮上设置的文件路径
+                    const filePath = button ? button.getAttribute('data-file') : '0.txt'
+
+                    // 通过 fetch 方法获取文件内容
+                    fetch(filePath)
+                        .then(response => response.text())
+                        .then(fileContent => {
+                            // 将文件内容插入到 id 为 filename 的 div 元素中
+                            document.getElementById('Load').innerHTML = fileContent;
+                        });
+                }
+            </script>
+</body>
+
+</html>

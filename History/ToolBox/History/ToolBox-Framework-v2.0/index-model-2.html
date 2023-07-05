@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>圆角框滑动浏览</title>
+    <style>
+        /* 容器样式 */
+        .container {
+            width: 400px;
+            height: 800px;
+            border-radius: 10px; /* 圆角半径 */
+            overflow: hidden; /* 溢出部分隐藏 */
+        }
+
+        /* 滑块样式 */
+        .slider {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column; /* 列排列 */
+            overflow-y: scroll; /* 纵向滚动条 */
+        }
+
+        /* 每个滑块样式 */
+        .slide {
+            padding: 20px; /* 内边距 */
+            background-color: #EEE; /* 背景颜色 */
+            border-radius: 10px; /* 圆角半径 */
+            margin-bottom: 20px; /* 底部外边距 */
+        }
+        
+        /* 文本框样式 */
+        .text-box {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #EEE;
+            line-height: 1.5;
+            color: black;
+            resize: none; /* 禁止拖拽改变大小 */
+        }
+    </style>
+</head>
+
+
+
+
+
+<body>
+
+
+<!--
+<div class="container">
+            <div class="image">
+                <img src="LTT.jpg" alt="Image">
+            </div>
+            <div class="content">
+                <div class="text">
+                    <div>李跳跳2.2</div>
+                    <div>李跳跳是一个通过无障碍权限识别并“跳过”来跳过开屏广告的一款App</div>
+                </div>
+                <div class="button">
+                    <button onclick="window.location.href='https://errorgr.github.io/ERROR-Web/ToolBox/Tools/李跳跳2.2.apk'" class="rounded">下载</button>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .container {
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                border-width: 2px;
+                position: absolute;
+                top: 100px;
+                left: 10px;
+                right: 10px;
+                color: black;
+            }
+
+            .image>img {
+                max-width: 85%;
+            }
+
+            .content {
+                display: flex;
+                flex-grow: 1;
+                justify-content: center;
+                /* 将子元素在容器中水平居中对齐 */
+                flex-wrap: wrap;
+            }
+
+            .text {
+                flex-basis: 80%;
+            }
+
+            .button {
+                /*“下载”按钮颜色*/
+                align-self: center;
+                justify-self: center;
+            }
+
+            .button button {
+                /*“下载”按钮背景*/
+                background-color: #167C53;
+            }
+
+            .rounded {
+                /*“下载”二字*/
+                border-radius: 10px;
+            }
+        </style>
+        -->
+    <div class="container">
+      <div class="slider">
+        <!-- 滑块1 -->
+        <div class="slide">
+            <textarea class="text-box">这里是文本框1</textarea>
+        </div>
+        <!-- 滑块2 -->
+        <div class="slide">
+            <textarea class="text-box">这里是文本框2</textarea>
+        </div>
+        <!-- 滑块3 -->
+        <div class="slide">
+            <textarea class="text-box">这里是文本框3</textarea>
+        </div>
+        <!-- 滑块4 -->
+        <div class="slide">
+            <textarea class="text-box">这里是文本框4</textarea>
+        </div>
+        <!-- 滑块5 -->
+        <div class="slide">
+            <textarea class="text-box">这里是文本框5</textarea>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
